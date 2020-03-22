@@ -25,22 +25,22 @@ In this challenge, you will create a Single Page Application complete with Clien
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
-- [ ]  Explain benefit(s) using `client-side routing`?
+- [x]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: In server-side routing, every page load and every change of the DOM is handled on the server, which means that a call between the client and server must happen. This is computationally expensive. In client-side routing, most of the changes happen only in the client browser, preventing heavy calls to the server.
 
 ## Project Set Up
 
 Follow these steps to set up and work on your project:
 
-- [ ]  Create a forked copy of this project.
+- [x]  Create a forked copy of this project.
 - [ ]  Add TL as collaborator on GitHub.
-- [ ]  Clone your OWN version of Repo (Not Lambda's by mistake!).
-- [ ]  Create a new Branch on the clone: `git checkout -b <firstName-lastName>`.
-- [ ]  Implement the project on this branch, committing changes regularly.
-- [ ]  Push commits: `git push origin <firstName-lastName>`.
-- [ ]  **LOOK** at your project directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
-- [ ]  **RUN** `npm install` to retrieve the client-side dependencies.
+- [x]  Clone your OWN version of Repo (Not Lambda's by mistake!).
+- [x]  Create a new Branch on the clone: `git checkout -b <firstName-lastName>`.
+- [x]  Implement the project on this branch, committing changes regularly.
+- [x]  Push commits: `git push origin <firstName-lastName>`.
+- [x]  **LOOK** at your project directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
+- [x]  **RUN** `npm install` to retrieve the client-side dependencies.
 - [ ]  **RUN** `npm start` to fire up your React application.
 
 ### Exceeded rate limits?
