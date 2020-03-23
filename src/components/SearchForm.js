@@ -35,12 +35,12 @@ export default function SearchForm(props) {
       if (searchQuery!=='') {
         searchQuery = `name=${searchQuery}`;
       }
-      const episodeCodeField = document.getElementById('episodeCode');
-      if (episodeCodeField.value!=='') {
+      const seasonSelect = document.getElementById('season');
+      if (seasonSelect.value!=='any') {
         if (searchQuery!=='') {
           searchQuery = searchQuery.concat('&');
         }
-        searchQuery = searchQuery.concat(`episode=${episodeCodeField.value}`);
+        searchQuery = searchQuery.concat(`episode=${seasonSelect.value}`);
       }
     }
     props.searchFunction(searchQuery);
@@ -79,8 +79,14 @@ export default function SearchForm(props) {
   const EpisodeSearchOptions = () => {
     return (
       <span>
-        <label htmlFor='episodeCode'> Episode Code: </label>
-        <input id='episodeCode' name='episodeCode' placeholder='Episode' onKeyPress={handleKeyPress} />
+        <label htmlFor='season'> Season: </label>
+        <select id='season' name='season'>
+          <option value='any'>Any</option>
+          <option value='s01'>1</option>
+          <option value='s02'>2</option>
+          <option value='s03'>3</option>
+          <option value='s04'>4</option>
+        </select>
       </span>
     );
   };
