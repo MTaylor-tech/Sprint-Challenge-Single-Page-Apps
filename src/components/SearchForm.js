@@ -1,10 +1,20 @@
 import React, { useState } from "react";
+import styled from 'styled-components';
 
-export default function SearchForm() {
- 
+const SForm = styled.section`
+  text-align: center;
+  margin: 15px;
+`;
+
+export default function SearchForm(props) {
+
+  const searchFunction = (event) => {
+    props.searchFunction(event.target.value.toLowerCase());
+  };
+
   return (
-    <section className="search-form">
-     // Add a search form here
-    </section>
+    <SForm>
+      <input id='search' onChange={searchFunction} />
+    </SForm>
   );
 }
