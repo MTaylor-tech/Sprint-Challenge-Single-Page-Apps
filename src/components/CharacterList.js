@@ -71,7 +71,7 @@ export default function CharacterList() {
   return (
     <div>
       <Head>
-        <SearchForm searchFunction={searchFunction} />
+        <SearchForm searchFunction={searchFunction} type='char' />
         <div>
           {(prevPage!=='')?<PNLink onClick={goToPrev} > Previous </PNLink>:<> </>}
           {(prevPage!=='')&&(nextPage!=='')?<PNLink className='undecorated'> | </PNLink>:<> </>}

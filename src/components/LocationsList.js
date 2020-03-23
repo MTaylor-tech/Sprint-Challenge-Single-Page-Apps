@@ -64,13 +64,14 @@ export default function LocationsList() {
 
   const searchFunction = (searchQuery) => {
     console.log(`Search: ${searchQuery}`);
-    setSearchString(searchQuery);
+    //setSearchString(searchQuery);
+    setCurrentPage(`https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/location/?name=${searchQuery}`);
   };
 
   return (
     <div>
       <Head>
-        <SearchForm searchFunction={searchFunction} />
+        <SearchForm searchFunction={searchFunction} type='loc' />
         <div>
           {(prevPage!=='')?<PNLink onClick={goToPrev} > Previous </PNLink>:<> </>}
           {(prevPage!=='')&&(nextPage!=='')?<PNLink className='undecorated'> | </PNLink>:<> </>}
