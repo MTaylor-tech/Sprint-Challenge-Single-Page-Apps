@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const CharCard = styled.div`
   width: 20%;
-  height: 400px;
+  height: 500px;
   display: inline-block;
   align-items: center;
   padding: 2vw;
@@ -25,7 +25,12 @@ export default function CharacterCard(props) {
     <CharCard>
       <h2>{props.character.name}</h2>
       <img src={props.character.image} alt={props.character.name} />
+      <p>Species: {props.character.species}</p>
+      {props.character.type!==''?<p>Type: {props.character.type}</p>:<></>}
+      <p>Gender: {props.character.gender}</p>
+      <p>Status: {props.character.status}</p>
       <p>Location: {props.character.location.name}</p>
+      <p>Origin: {props.character.origin.name}</p>
     </CharCard>
   );
 }

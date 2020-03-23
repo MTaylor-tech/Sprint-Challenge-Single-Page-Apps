@@ -14,7 +14,7 @@ export default function SearchForm(props) {
 
   return (
     <SForm>
-      <input id='search' onChange={searchFunction} />
+      <input id='search' onChange={searchFunction} placeholder="Search" />
     </SForm>
   );
 }
