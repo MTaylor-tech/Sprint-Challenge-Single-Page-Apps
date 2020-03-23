@@ -63,8 +63,9 @@ export default function CharacterList() {
   };
 
   const searchFunction = (searchQuery) => {
-    console.log(`Search: ${searchQuery}`);
-    setSearchString(searchQuery);
+    //console.log(`Search: ${searchQuery}`);
+    //setSearchString(searchQuery);
+    setCurrentPage(`https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/?name=${searchQuery}`);
   };
 
   return (
