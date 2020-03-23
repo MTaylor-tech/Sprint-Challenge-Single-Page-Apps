@@ -9,12 +9,22 @@ const SForm = styled.section`
 export default function SearchForm(props) {
 
   const searchFunction = (event) => {
-    props.searchFunction(event.target.value.toLowerCase());
+    const searchField = document.getElementById('searchField');
+    event.preventDefault();
+    props.searchFunction(searchField.value.toLowerCase());
   };
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      searchFunction(event);
+    }
+  };
+
 
   return (
     <SForm>
-      <input id='search' onChange={searchFunction} placeholder="Search" />
+      <input id='searchField' onKeyPress={handleKeyPress} placeholder="Search" />
+      <button type="submit" onClick={searchFunction}>Search</button>
     </SForm>
   );
 }
