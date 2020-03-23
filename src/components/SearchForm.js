@@ -31,6 +31,17 @@ export default function SearchForm(props) {
       if (chartypeField.value!=='') {
         searchQuery = searchQuery.concat(`&type=${chartypeField.value}`);
       }
+    } else if (props.type==='episode') {
+      if (searchQuery!=='') {
+        searchQuery = `name=${searchQuery}`;
+      }
+      const episodeCodeField = document.getElementById('episodeCode');
+      if (episodeCodeField.value!=='') {
+        if (searchQuery!=='') {
+          searchQuery = searchQuery.concat('&');
+        }
+        searchQuery = searchQuery.concat(`episode=${episodeCodeField.value}`);
+      }
     }
     props.searchFunction(searchQuery);
   };
@@ -63,7 +74,16 @@ export default function SearchForm(props) {
         </span>
       </div>
     );
-  }
+  };
+
+  const EpisodeSearchOptions = () => {
+    return (
+      <span>
+        <label htmlFor='episodeCode'> Episode Code: </label>
+        <input id='episodeCode' name='episodeCode' placeholder='Episode' onKeyPress={handleKeyPress} />
+      </span>
+    );
+  };
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
@@ -77,6 +97,7 @@ export default function SearchForm(props) {
     <SForm>
       <label htmlFor='searchField'>Name: </label>
       <input id='searchField' name='searchField' onKeyPress={handleKeyPress} placeholder="Name" />
+      {props.type==='episode'?<EpisodeSearchOptions />:<></>}
       <button type="submit" onClick={searchFunction}>Search</button>
       {props.type==='char'?<CharSearchOptions />:<></>}
     </SForm>
